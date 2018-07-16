@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<h1 class="well jumbotron">Products</h1>
 
 <table class="table">
   <thead>
@@ -26,9 +26,9 @@
         <td><%= product.brand %></td>
         <td><%= product.rating %></td>
         <td><%= product.category_id %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', product, class: "btn btn-md btn-warning" %></td>
+        <td><%= link_to 'Edit', edit_product_path(product), class: "btn btn-md btn-success" %></td>
+        <td><%= link_to 'Destroy', product, class: "btn btn-md btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'New Product', new_product_path, class: "btn btn-md btn-warning" %>
