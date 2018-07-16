@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
  
-  get 'cart/add_to_cart'
-  get 'cart/view_order'
-  get 'cart/checkout'
+  post 'add_to_cart' => 'cart#add_to_cart'
+
+  get 'view_order' => 'cart#view_order'
+
+  get 'checkout' => 'cart#checkout'
+
   root 'storefront#all_products'
 
   get 'categories' => 'storefront#by_category'
+
   get 'brands' => 'storefront#by_brand'
 
   resources :products

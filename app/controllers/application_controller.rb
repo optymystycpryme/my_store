@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
 	# before_action :authenticate_user!
 
-	# before_action :configure_permitted_parameters, if: :devise_controller?
+	before_action :configure_permitted_parameters, if: :devise_controller?
 
 	before_action :categories, :brands
 
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 	protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name, :avatar])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name, :avatar])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name, :role])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name, :role])
   end
 end
